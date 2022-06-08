@@ -239,12 +239,19 @@ BEGIN
 		writeCmd <= '0';
 		wait for 5 ns;	
 
-		dataIn   <= X"88888888";
+		dataIn   <= X"88888888"; -- test case for zero register 
 		writeReg <= "10001";
 		writeCmd <= '1';
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
+		
+		dataIn   <= X"88888888"; -- test case for zero register 
+		writeReg <= "00000";
+		writeCmd <= '1';
+		wait for 5 ns;	
+		writeCmd <= '0';
+		wait for 5 ns;
 
 		readReg1 <= "00000";
 		readReg2 <= "01010";
